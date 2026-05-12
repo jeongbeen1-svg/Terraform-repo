@@ -4,11 +4,18 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~>6.0"
+      version = ">= 6.0"
     }
   }
 }
 
 provider "aws" {
   region = "ap-northeast-2"
+
+  default_tags {
+    tags = {
+      Project   = "tf-core-lab01"
+      ManagedBy = "Terraform"
+    }
+  }
 }
