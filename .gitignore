@@ -1,7 +1,22 @@
-#.terraform.lock.hcl
-.terraform/
+### Terraform ###
+
+# 1. 로컬 작업용 디렉터리 (바이너리 및 캐시)
+**/.terraform/
+
+# 2. 상태 파일 (공개 시 인프라 보안 위험 및 충돌 원인)
 *.tfstate
 *.tfstate.backup
+*.tfstate.lock.info
+
+### VisualStudioCode ###
+**/.vscode/*
+!**/.vscode/settings.json
+!**/.vscode/tasks.json
+!**/.vscode/launch.json
+!**/.vscode/extensions.json
+!**/.vscode/*.code-snippets
+
+### ETC ###
 *.zip
 .aws/
 .tfenv/
