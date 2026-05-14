@@ -5,8 +5,8 @@ locals {
   namespace = "${local.org}-${local.project}"
 
   s3bucket = {
-    name   = "tfstate5933"
-    bucket = "${local.org}-tfstate5933"
+    name   = "tfstate"
+    bucket = "${local.org}-tfstate-561651981819"
 
     versioning_configuration = {
       status = "Enabled"

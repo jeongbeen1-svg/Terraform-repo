@@ -1,15 +1,21 @@
-resource "aws_s3_bucket" "this" {
-  bucket = local.s3bucket.bucket
+resource "aws_security_group" "this" {
+  name = "${local.namespace}-sg"
 
-  tags = {
-    Name = "${local.namespace}-s3bucket-${local.s3bucket.name}"
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
-  lifecycle {
-    prevent_destroy = true
+  tags = {
+    Name = "${local.namespace}-sg"
   }
 }
 
+resource "aws_s3_bucket" "this" {
+  bucket = local.s3bucket.bucket
+}
 
 resource "aws_s3_bucket_versioning" "this" {
   bucket = aws_s3_bucket.this.id
@@ -18,7 +24,6 @@ resource "aws_s3_bucket_versioning" "this" {
     status = local.s3bucket.versioning_configuration.status
   }
 }
-
 
 resource "aws_s3_bucket_public_access_block" "this" {
   bucket = aws_s3_bucket.this.id
