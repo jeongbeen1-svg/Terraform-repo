@@ -7,15 +7,6 @@ terraform {
       version = "~> 6.0"
     }
   }
-
-
-  backend "s3" {
-    bucket       = "tf-core-tfstate-561651981819"
-    key          = "04.03/lab01/terraform.tfstate"
-    region       = "ap-northeast-2"
-    encrypt      = true
-    use_lockfile = true
-  }
 }
 
 provider "aws" {
@@ -27,5 +18,5 @@ provider "aws" {
       Project      = local.project
       ManagedBy    = "Terraform"
     }
-  }
+  }  
 }
