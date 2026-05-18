@@ -12,12 +12,6 @@ locals {
     associate_public_ip_address = false
     iam_instance_profile        = var.instance_iam_instance_profile
 
-
-    user_data = base64encode(templatefile("templates/user_data.sh.tpl", {
-      profile     = "dev"
-      server_port = 80
-    }))
-    
     allow_access = {
       port        = 80
       cidr_blocks = var.instance_allow_access_cidr_blocks
