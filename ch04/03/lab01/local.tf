@@ -6,7 +6,7 @@ locals {
 
   s3bucket = {
     name   = "tfstate"
-    bucket = "${local.org}-tfstate-561651981819"
+    bucket = "${local.org}-tfstate-5616519818199"
 
     versioning_configuration = {
       status = "Enabled"

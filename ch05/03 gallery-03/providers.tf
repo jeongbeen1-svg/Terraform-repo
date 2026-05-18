@@ -10,7 +10,7 @@ terraform {
 
   backend "s3" {
     bucket       = "tf-core-tfstate-5616519818199"
-    key          = "04.03/lab01/terraform.tfstate"
+    key          = "gallery/terraform.tfstate"
     region       = "ap-northeast-2"
     encrypt      = true
     use_lockfile = true
@@ -24,6 +24,7 @@ provider "aws" {
     tags = {
       Organization = local.org
       Project      = local.project
+      Environment  = local.environment
       ManagedBy    = "Terraform"
     }
   }
