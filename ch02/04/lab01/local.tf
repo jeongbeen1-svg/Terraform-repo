@@ -25,12 +25,12 @@ locals {
     name = "ssm-test"
     
     # main.tf에서 정의한 local ec2 스펙
-    ami = "ami-0c003e98ceffee43e"
+    ami = "ami-0c003e98ceffee43e"           # ← 관련값끼리 객체로 묶음
     instance_type = "t3.micro"
     associate_public_ip_address = true
 
     # 포트도 정의
-    allow_access = {
+    allow_access = {                        # ← 관련값끼리 객체로 묶음
       port = 80
       cidr_blocks = ["0.0.0.0/0"]
     }
