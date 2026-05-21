@@ -5,6 +5,7 @@ locals {
 #
 #
 #
+#
   vpc = {
     name = "main"
 #

@@ -3,7 +3,7 @@ name: 10.02.lab01 deploy
 on:
   push:
     branches: [main]
-    paths: ["ch10/02/lab01/*.tf"]
+    paths: ["ch10/02/lab01/infra/*.tf"]
 
 permissions:
   contents: read
@@ -12,7 +12,7 @@ permissions:
 
 env:
   TF_VERSION: "1.14.7"
-  WORKING_DIR: "ch10/02/lab01"
+  WORKING_DIR: "ch10/02/lab01/infta"
 
 jobs:
   apply:
