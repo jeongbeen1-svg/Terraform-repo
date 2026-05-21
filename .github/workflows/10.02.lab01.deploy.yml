@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths: ["ch10/02/lab01/infra/*.tf"]
 
+  # 깃헙 웹사이트에 수동 배포 버튼
+  workflow_dispatch:
+
 permissions:
   contents: read
   id-token: write
@@ -12,6 +15,7 @@ permissions:
 
 env:
   TF_VERSION: "1.14.7"
+  AWS_REGION: "ap-northeast-2"
   WORKING_DIR: "ch10/02/lab01/infta"
 
 jobs:

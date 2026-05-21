@@ -7,7 +7,7 @@ resource "aws_vpc" "this" {
     Name = "${local.namespace}-vpc-${local.vpc.name}"
   }
 }
-
+#
 resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
 
