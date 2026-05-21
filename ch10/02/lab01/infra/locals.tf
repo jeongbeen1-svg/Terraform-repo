@@ -3,6 +3,8 @@ locals {
   project   = "lab01"
   namespace = "${local.org}-${local.project}"
 #
+#
+#
   vpc = {
     name = "main"
 #

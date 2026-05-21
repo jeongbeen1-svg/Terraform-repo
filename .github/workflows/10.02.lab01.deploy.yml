@@ -12,7 +12,7 @@ permissions:
 
 env:
   TF_VERSION: "1.14.7"
-  WORKING_DIR: "ch10/01/lab01"
+  WORKING_DIR: "ch10/02/lab01"
 
 jobs:
   apply:
