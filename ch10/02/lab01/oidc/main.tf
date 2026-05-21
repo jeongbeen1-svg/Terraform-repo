@@ -7,7 +7,7 @@ resource "aws_iam_openid_connect_provider" "this" {
     Name = "${local.namespace}-iamoidcp-${local.iamoidcp.name}"
   }
 }
-
+#
 resource "aws_iam_role" "this" {
   name = "${local.namespace}-iamrole-${local.iamrole.name}"
 
