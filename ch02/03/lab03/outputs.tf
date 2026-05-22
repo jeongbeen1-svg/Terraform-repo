@@ -3,18 +3,18 @@
 
 # 인스턴스 ID 출력
 output "instance" {
-    value = aws_instance.instance.id
+  value = aws_instance.instance.id
 }
 # 시큐리티그룹 ID 출력
 output "sg" {
-    value = aws_security_group.instance.id  
+  value = aws_security_group.instance.id
 }
 # iam 프로필 이름 출력
 # .id가 아닌 .name 인 이유: 프로필은 이름으로 EC2에 연결하기 때문
 output "iamprofile" {
-    value = aws_iam_instance_profile.instance.name  
+  value = aws_iam_instance_profile.instance.name
 }
 # iam 역할 ID 출력
 output "iamrole" {
-    value = aws_iam_role.instance.id
+  value = aws_iam_role.instance.id
 }

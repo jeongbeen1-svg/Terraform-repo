@@ -1,5 +1,5 @@
 locals {
-  org = "tf-core"    
+  org     = "tf-core"
   project = "lab03"
 
   namespace = "${local.org}-${local.project}"
@@ -13,7 +13,7 @@ locals {
   }
 
   instance = {
-    ami = "ami-1234567890"
+    ami           = "ami-1234567890"
     instance_type = var.env == "prod" ? "t3.small" : "t3.micro"
   }
 }

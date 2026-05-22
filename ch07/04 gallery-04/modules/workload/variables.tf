@@ -35,15 +35,15 @@ variable "asg_desired_capacity" {
   type = number
 }
 
-variable "asg_max_size"{
+variable "asg_max_size" {
   type = number
 }
 
-variable "asg_min_size"{
+variable "asg_min_size" {
   type = number
 }
 
 variable "lt_instance_type" {
   type = string
-  
+
 }

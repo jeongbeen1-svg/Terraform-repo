@@ -77,7 +77,7 @@ resource "aws_instance" "this" {
   instance_type               = local.instance.instance_type
   associate_public_ip_address = local.instance.associate_public_ip_address
 
-  subnet_id                   = local.instance.subnet_id
+  subnet_id = local.instance.subnet_id
 
   vpc_security_group_ids = [aws_security_group.this.id]
   iam_instance_profile   = aws_iam_instance_profile.this.name

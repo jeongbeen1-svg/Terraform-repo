@@ -7,15 +7,15 @@ locals {
 
   infra = {
     lb = {
-      listener_port  = 80
+      listener_port = 80
     }
 
     lt = {
-      service_port   = 8080
-      instance_type  = var.infra_lt_instance_type
+      service_port  = 8080
+      instance_type = var.infra_lt_instance_type
 
     }
-    
+
 
     asg = {
       max_size         = var.infra_asg_max_size
@@ -25,5 +25,5 @@ locals {
 
     }
 
-    }
   }
+}

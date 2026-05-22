@@ -31,7 +31,7 @@ resource "aws_security_group" "this" {
     protocol    = "tcp"
     cidr_blocks = local.instance.allow_access.cidr_blocks
   }
-  
+
   egress {
     from_port   = 0
     to_port     = 0
@@ -53,7 +53,7 @@ resource "aws_instance" "web" {
   iam_instance_profile        = aws_iam_instance_profile.this.name
 
   user_data_replace_on_change = true
-  user_data_base64 = local.instance.user_data
+  user_data_base64            = local.instance.user_data
 
   depends_on = [aws_iam_role_policy_attachment.this]
 

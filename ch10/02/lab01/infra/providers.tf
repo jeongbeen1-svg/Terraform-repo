@@ -7,14 +7,14 @@ terraform {
       version = "~> 6.0"
     }
   }
-  
+
   backend "s3" {
     bucket       = "tf-core-tfstate-5616519818199"
     key          = "10.02/lab01/terraform.tfstate"
     region       = "ap-northeast-2"
     encrypt      = true
     use_lockfile = true
-  }  
+  }
 }
 
 provider "aws" {

@@ -10,7 +10,7 @@ resource "aws_iam_openid_connect_provider" "this" {
 #
 resource "aws_iam_role" "this" {
   name = "${local.namespace}-iamrole-${local.iamrole.name}"
-#
+  #
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
 

@@ -31,13 +31,13 @@ variable "infra_asg_desired_capacity" {
 }
 
 variable "infra_db_username" {
-  type = string
+  type      = string
   sensitive = true
-  
+
 }
 
 variable "infra_db_password" {
-  type = string
+  type      = string
   sensitive = true
-  
+
 }

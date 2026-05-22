@@ -17,7 +17,7 @@ provider "aws" {
   region = "ap-northeast-2"
 
   # lab04와 달리 하드코딩 대신 local 참조
-      # → 프로젝트명 변경 시 locals.tf 한 곳만 수정하면 됨
+  # → 프로젝트명 변경 시 locals.tf 한 곳만 수정하면 됨
   default_tags {
     tags = {
       Project   = local.project

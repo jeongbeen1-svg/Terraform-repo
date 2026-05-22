@@ -18,7 +18,7 @@ output "lb" {
 
       target_group = {
         arn = aws_lb_target_group.this.arn
-        health_check = {                          # ← 추가
+        health_check = { # ← 추가
           path = aws_lb_target_group.this.health_check[0].path
         }
       }

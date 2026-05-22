@@ -27,5 +27,5 @@ variable "infra_lb_listener_port" {
 }
 
 variable "infra_lt_service_port" {
- type = number 
+  type = number
 }

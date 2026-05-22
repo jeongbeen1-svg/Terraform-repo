@@ -16,7 +16,7 @@ run "verify_naming" {
 
   assert {
     condition     = aws_instance.this.tags["Name"] == "tf-core-lab01-instance-web"
-    error_message = "Name 태그가 네이밍 규칙과 일치해야 한다. 실제: ${aws_instance.this.tags["Name"]}" 
+    error_message = "Name 태그가 네이밍 규칙과 일치해야 한다. 실제: ${aws_instance.this.tags["Name"]}"
   }
 
   assert {

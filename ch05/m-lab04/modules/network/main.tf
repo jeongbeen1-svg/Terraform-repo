@@ -1,8 +1,8 @@
 resource "aws_vpc" "this" {
-  cidr_block = local.vpc.cidr_block
+  cidr_block           = local.vpc.cidr_block
   enable_dns_support   = local.vpc.enable_dns_support
   enable_dns_hostnames = local.vpc.enable_dns_hostnames
-  
+
   tags = {
     Name = "${local.namespace}-vpc-${local.vpc.name}"
   }
@@ -40,7 +40,7 @@ resource "aws_route_table" "public_0" {
 }
 
 resource "aws_route_table_association" "public_0" {
-  subnet_id = aws_subnet.public_0.id
+  subnet_id      = aws_subnet.public_0.id
   route_table_id = aws_route_table.public_0.id
 }
 
@@ -70,6 +70,6 @@ resource "aws_route_table" "public_1" {
 }
 
 resource "aws_route_table_association" "public_1" {
-  subnet_id = aws_subnet.public_1.id
+  subnet_id      = aws_subnet.public_1.id
   route_table_id = aws_route_table.public_1.id
 }

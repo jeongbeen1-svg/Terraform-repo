@@ -3,7 +3,7 @@ locals {
   # 프로젝트 이름은 tf-core-gallery
   project = "tf-core-gallery"
 
-   # datasources.tf에서 조회한 default VPC id 참조
+  # datasources.tf에서 조회한 default VPC id 참조
   # → 하드코딩 없이 실제 AWS에서 동적으로 가져옴
   vpc_id = data.aws_vpc.default.id
 
@@ -15,8 +15,8 @@ locals {
     # ami          → 하드코딩 X, datasources에서 최신 AMI 동적 조회
     # instance_type → 하드코딩 X, var.instance_type으로 외부 주입
     # subnet_id    → 하드코딩 X, datasources에서 동적 조회
-    ami                         = data.aws_ami.amazon_linux.id
-    instance_type               = var.instance_type
+    ami           = data.aws_ami.amazon_linux.id
+    instance_type = var.instance_type
     # 공인 IP 부여
     associate_public_ip_address = true
     subnet_id                   = data.aws_subnets.default.ids[0]
@@ -30,7 +30,7 @@ locals {
 
   # IAM 역할
   iamrole = {
-    
+
     name = "instance-web"
 
     # lab04와 핵심 차이!

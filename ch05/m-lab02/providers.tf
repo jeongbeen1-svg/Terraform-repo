@@ -8,7 +8,7 @@ terraform {
     }
   }
 
- backend "s3" {
+  backend "s3" {
     bucket       = "tf-core-tfstate-5616519818199"
     key          = "m-lab02/terraform.tfstate"
     region       = "ap-northeast-2"
@@ -26,5 +26,5 @@ provider "aws" {
       Project      = local.project
       ManagedBy    = "Terraform"
     }
-  }  
+  }
 }

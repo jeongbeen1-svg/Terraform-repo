@@ -1,6 +1,6 @@
 # main.tf
 resource "aws_s3_bucket" "this" {
-  bucket = local.s3bucket.name 
+  bucket = local.s3bucket.name
 }
 
 resource "aws_security_group" "this" {

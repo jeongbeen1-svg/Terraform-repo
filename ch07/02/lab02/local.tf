@@ -10,18 +10,18 @@ locals {
   instance = {
     name = "web"
 
-    ami                         = data.aws_ami.amazon_linux.id
+    ami = data.aws_ami.amazon_linux.id
     instance_type = (
-  local.environment == "dev" ? "t3.micro" : local.environment == "stg" ? "t3.small" : "t3.medium"
-)
+      local.environment == "dev" ? "t3.micro" : local.environment == "stg" ? "t3.small" : "t3.medium"
+    )
     associate_public_ip_address = true
     subnet_id                   = data.aws_subnets.default.ids[0]
 
     allow_access = {
-      port        = 80
+      port = 80
       cidr_blocks = (
         local.environment == "dev" ? ["218.10.1.0/32"] : local.environment == ["0.0.0.0/0"]
-)
+      )
     }
   }
 

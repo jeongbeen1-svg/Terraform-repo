@@ -5,7 +5,7 @@ locals {
   namespace = "${local.org}-${local.project}"
 
   vpc_id = data.aws_vpc.default.id
-  
+
   instance = {
     name = "web"
 
@@ -18,7 +18,7 @@ locals {
       profile     = "dev"
       server_port = 80
     }))
-    
+
     allow_access = {
       port        = 80
       cidr_blocks = ["0.0.0.0/0"]

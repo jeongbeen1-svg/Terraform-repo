@@ -18,5 +18,5 @@ provider "aws" {
       Project      = local.project
       ManagedBy    = "Terraform"
     }
-  }  
+  }
 }
