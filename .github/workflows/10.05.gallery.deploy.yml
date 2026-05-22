@@ -3,7 +3,7 @@ name: 10.02.lab01 deploy
 on:
   push:
     branches: [main]
-    paths: ["ch10/02/lab01/infra/*.tf"]
+    paths: ["ch10/05-gallery/*.tf"]
 
   # 깃헙 웹사이트에 수동 배포 버튼
   workflow_dispatch:
@@ -16,7 +16,7 @@ permissions:
 env:
   TF_VERSION: "1.14.7"
   AWS_REGION: "ap-northeast-2"
-  WORKING_DIR: "ch10/02/lab01/infra"
+  WORKING_DIR: "ch10/05-gallery"
 
 jobs:
   apply:
@@ -38,9 +38,28 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_IAMROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
+      
+      - name: Create Secrets Files
+        run: |
+          cat << 'EOF' > env.dev.tfvars
+          ${{ secrets.DEV_TFVARS }}
+          EOF
 
       - name: Terraform Init
-        run: terraform init
+        run: terraform init -input=false -backend-config="env.dev.backend.hcl"
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform apply -input=false -auto-approve -var-file="env.dev.tfvars" -no-color
+      
+      - name: Create Secrets Files
+        run: |
+          cat << 'EOF' > env.dev.tfvars
+          ${{ secrets.PROD_TFVARS }}
+          EOF
+
+      - name: Terraform Init
+        run: terraform init -input=false -backend-config="env.prod.backend.hcl" -reconfigure
+
+      - name: Terraform Apply
+        run: terraform apply -input=false -auto-approve -var-file="env.prod.tfvars" -no-color
+
