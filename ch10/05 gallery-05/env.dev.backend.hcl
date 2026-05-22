@@ -1,1 +1,0 @@
-key = "dev/gallery/terraform.tfstate"

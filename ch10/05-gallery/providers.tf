@@ -11,6 +11,7 @@ terraform {
   backend "s3" {
     bucket       = "tf-core-tfstate-5616519818199"
     region       = "ap-northeast-2"
+    key          = "ch10/05-gallery/terraform.tfstate"
     encrypt      = true
     use_lockfile = true
   }
