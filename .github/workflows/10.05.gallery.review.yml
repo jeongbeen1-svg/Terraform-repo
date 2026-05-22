@@ -38,12 +38,19 @@ jobs:
           role-to-assume: ${{ secrets.AWS_IAMROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
 
+      #
+      - name: Create Secrets Files
+        run: |
+          cat << 'EOF' > env.dev.tfvars
+          ${{ secrets.DEV_TFVARS }}
+          EOF
+
       - name: Terraform Init
-        run: terraform init -input=false
+        run: terraform init -input=false -backend-config="env.dev.backend.hcl"
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -input=false -no-color
+        run: terraform plan -input=false -no-color -var-file="env.dev.tfvars" -no-color
         continue-on-error: true
 
       - name: Post Plan to PR
